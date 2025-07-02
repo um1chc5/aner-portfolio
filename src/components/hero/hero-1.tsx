@@ -12,7 +12,7 @@ export default function Hero1() {
           {/* Greeting and Avatar */}
           <div className="flex flex-col gap-2">
             <HyperText className="text-6xl font-black">AN VU VUONG</HyperText>
-            <p className="text-2xl font-semibold">Frontend Developer</p>
+            <p className="text-2xl font-semibold">Web Developer</p>
             <p className="text-muted-foreground mt-2 max-w-xl text-lg">
               Hi, I&apos;m a developer drifting through this vague idea of life.
               I love building beautiful and functional web experiences with
