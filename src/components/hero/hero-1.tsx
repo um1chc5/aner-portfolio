@@ -1,10 +1,9 @@
 import { HyperText } from "@/components/magicui/hyper-text";
 import Image from "next/image";
-import { InteractiveGridPattern } from "../magicui/interactive-grid-pattern";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import PageFadeTransition from "../page-transition/page-fade-transition";
-import ButtonWithHoverSound from "../ButtonWithHoverSound";
+import ButtonWithHoverSound from "../audio/button-with-hover-sound";
+import GridBackground from "../grid-background";
 
 export default function Hero1() {
   return (
@@ -152,16 +151,7 @@ export default function Hero1() {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 h-screen w-full overflow-hidden">
-        <InteractiveGridPattern
-          squares={[40, 40]}
-          squaresClassName="hover:fill-blue-500"
-          className={cn(
-            "[mask-image:radial-gradient(720px_circle_at_center,white,transparent)]",
-            "inset-x-0 skew-y-12",
-          )}
-        />
-      </div>
+      <GridBackground />
     </PageFadeTransition>
   );
 }

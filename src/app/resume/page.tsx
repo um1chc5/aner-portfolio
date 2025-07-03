@@ -1,32 +1,32 @@
-import ButtonWithHoverSound from "@/components/ButtonWithHoverSound";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+import ButtonWithHoverSound from "@/components/audio/button-with-hover-sound";
+import GridBackground from "@/components/grid-background";
 import PageFadeTransition from "@/components/page-transition/page-fade-transition";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Resume() {
   return (
     <PageFadeTransition>
+      <GridBackground className="fixed" />
       <ButtonWithHoverSound>
         <Link
           href="/"
-          className="hover:bg-primary-foreground pointer-events-auto absolute top-16 left-8 z-10 rounded-md border bg-white px-4 py-2 shadow"
+          className="hover:bg-primary-foreground pointer-events-auto top-4 left-4 z-10 rounded-md border bg-white px-3 py-1.5 text-sm shadow sm:left-4 sm:px-4 sm:py-2 sm:text-base md:fixed md:top-8 md:left-8"
         >
           ← Back to Home
         </Link>
       </ButtonWithHoverSound>
-      <main className="relative flex min-h-screen items-start justify-center px-4 py-16">
+      <main className="relative flex min-h-screen items-start justify-center px-4 py-8 sm:px-4 sm:py-12 md:px-8 md:py-16">
         {/* Back to Home Button */}
-        <section className="w-full max-w-2xl rounded-xl border border-gray-200 bg-white/80 p-8 text-justify shadow-xl backdrop-blur-md">
+        <section className="w-full max-w-md rounded-xl border border-gray-200 bg-white/80 p-4 text-justify shadow-xl backdrop-blur-md sm:max-w-lg sm:p-6 md:max-w-2xl md:p-8">
           {/* Header */}
           <header className="mb-6 text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
               VU VUONG AN
             </h1>
-            <p className="mt-1 text-lg font-semibold text-blue-600">
+            <p className="mt-1 text-base font-semibold text-blue-600 sm:text-lg">
               FRONTEND DEVELOPER
             </p>
-            <div className="mt-2 flex justify-center gap-4 text-sm text-gray-500">
+            <div className="mt-2 flex flex-col justify-center gap-2 text-sm text-gray-500 sm:flex-row sm:gap-4">
               <ButtonWithHoverSound>
                 <Link
                   href="https://github.com/YOUR_GITHUB"
@@ -68,7 +68,7 @@ export default function Resume() {
               EXPERIENCE
             </h2>
             <div className="mb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start justify-between gap-1 sm:flex-row sm:items-center sm:gap-0">
                 <span className="font-medium text-gray-900">
                   Triplayz - Frontend Developer
                 </span>
@@ -94,7 +94,7 @@ export default function Resume() {
               </ul>
             </div>
             <div className="mb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start justify-between gap-1 sm:flex-row sm:items-center sm:gap-0">
                 <span className="font-medium text-gray-900">
                   SmartOSC - Fullstack Fresher
                 </span>
@@ -116,7 +116,7 @@ export default function Resume() {
               </ul>
             </div>
             <div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start justify-between gap-1 sm:flex-row sm:items-center sm:gap-0">
                 <span className="font-medium text-gray-900">
                   FPT Software - Web Development Intern
                 </span>
@@ -203,18 +203,18 @@ export default function Resume() {
           </section>
 
           {/* Contact & Certificate */}
-          <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <section className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
               <h2 className="mb-1 text-base font-bold text-gray-700">
                 CONTACT
               </h2>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm break-words text-gray-700">
                 <li>
                   <span className="font-medium">Phone:</span> +84 378995613
                 </li>
                 <li>
                   <span className="font-medium">Email:</span>{" "}
-                  anvuvuong05@gmail.com
+                  <span className="break-all">anvuvuong05@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -232,16 +232,6 @@ export default function Resume() {
           </section>
         </section>
       </main>
-      <div className="fixed top-0 -z-10 h-screen w-full overflow-hidden">
-        <InteractiveGridPattern
-          squares={[40, 40]}
-          squaresClassName="hover:fill-blue-500"
-          className={cn(
-            "[mask-image:radial-gradient(720px_circle_at_center,white,transparent)]",
-            "inset-x-0 skew-y-12",
-          )}
-        />
-      </div>
     </PageFadeTransition>
   );
 }

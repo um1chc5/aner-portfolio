@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useAudio } from "./AudioProvider";
+import { useAudio } from "./audio-provider";
 
 // Path to the audio file
 
