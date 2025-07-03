@@ -4,6 +4,7 @@ import { InteractiveGridPattern } from "../magicui/interactive-grid-pattern";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import PageFadeTransition from "../page-transition/page-fade-transition";
+import ButtonWithHoverSound from "../ButtonWithHoverSound";
 
 export default function Hero1() {
   return (
@@ -23,39 +24,47 @@ export default function Hero1() {
             </p>
           </div>
 
-          <Link
-            href="/resume"
-            className="pointer-events-auto mt-4 font-semibold hover:underline"
-          >
-            My Resume
-          </Link>
+          <ButtonWithHoverSound>
+            <Link
+              href="/resume"
+              className="pointer-events-auto mt-4 font-semibold hover:underline"
+            >
+              My Resume
+            </Link>
+          </ButtonWithHoverSound>
 
           {/* Contact Links */}
           <div className="pointer-events-auto mt-4 flex flex-row gap-6">
-            <Link
-              href="https://www.facebook.com/um1chc5/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium hover:underline"
-            >
-              Facebook
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/an-vu-100a2b1a6/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium hover:underline"
-            >
-              LinkedIn
-            </Link>
-            <Link
-              href="https://github.com/um1chc5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium hover:underline"
-            >
-              GitHub
-            </Link>
+            <ButtonWithHoverSound>
+              <Link
+                href="https://www.facebook.com/um1chc5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium hover:underline"
+              >
+                Facebook
+              </Link>
+            </ButtonWithHoverSound>
+            <ButtonWithHoverSound>
+              <Link
+                href="https://www.linkedin.com/in/an-vu-100a2b1a6/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium hover:underline"
+              >
+                LinkedIn
+              </Link>
+            </ButtonWithHoverSound>
+            <ButtonWithHoverSound>
+              <Link
+                href="https://github.com/um1chc5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium hover:underline"
+              >
+                GitHub
+              </Link>
+            </ButtonWithHoverSound>
           </div>
 
           {/* Tech Stack */}

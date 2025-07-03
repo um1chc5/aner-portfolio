@@ -1,3 +1,4 @@
+import ButtonWithHoverSound from "@/components/ButtonWithHoverSound";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import PageFadeTransition from "@/components/page-transition/page-fade-transition";
 import { cn } from "@/lib/utils";
@@ -6,12 +7,14 @@ import Link from "next/link";
 export default function Resume() {
   return (
     <PageFadeTransition>
-      <Link
-        href="/"
-        className="hover:bg-primary-foreground pointer-events-auto absolute top-16 left-8 z-10 rounded-md border bg-white px-4 py-2 shadow"
-      >
-        ← Back to Home
-      </Link>
+      <ButtonWithHoverSound>
+        <Link
+          href="/"
+          className="hover:bg-primary-foreground pointer-events-auto absolute top-16 left-8 z-10 rounded-md border bg-white px-4 py-2 shadow"
+        >
+          ← Back to Home
+        </Link>
+      </ButtonWithHoverSound>
       <main className="relative flex min-h-screen items-start justify-center px-4 py-16">
         {/* Back to Home Button */}
         <section className="w-full max-w-2xl rounded-xl border border-gray-200 bg-white/80 p-8 text-justify shadow-xl backdrop-blur-md">
@@ -24,22 +27,26 @@ export default function Resume() {
               FRONTEND DEVELOPER
             </p>
             <div className="mt-2 flex justify-center gap-4 text-sm text-gray-500">
-              <Link
-                href="https://github.com/YOUR_GITHUB"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-blue-600"
-              >
-                GitHub
-              </Link>
-              <Link
-                href="https://linkedin.com/in/YOUR_LINKEDIN"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-blue-600"
-              >
-                LinkedIn
-              </Link>
+              <ButtonWithHoverSound>
+                <Link
+                  href="https://github.com/YOUR_GITHUB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-blue-600"
+                >
+                  GitHub
+                </Link>
+              </ButtonWithHoverSound>
+              <ButtonWithHoverSound>
+                <Link
+                  href="https://linkedin.com/in/YOUR_LINKEDIN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-blue-600"
+                >
+                  LinkedIn
+                </Link>
+              </ButtonWithHoverSound>
             </div>
           </header>
 
