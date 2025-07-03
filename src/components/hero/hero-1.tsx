@@ -3,15 +3,18 @@ import Image from "next/image";
 import { InteractiveGridPattern } from "../magicui/interactive-grid-pattern";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import PageFadeTransition from "../page-transition/page-fade-transition";
 
 export default function Hero1() {
   return (
-    <div>
+    <PageFadeTransition>
       <div className="flex min-h-screen flex-col items-center justify-center gap-8 p-6">
         <div className="pointer-events-none z-10 w-full sm:w-2/3 md:w-2/3">
           {/* Greeting and Avatar */}
           <div className="flex flex-col gap-2">
-            <HyperText className="text-6xl font-black">AN VU VUONG</HyperText>
+            <HyperText duration={1500} className="text-6xl font-black">
+              AN VU VUONG
+            </HyperText>
             <p className="text-2xl font-semibold">Web Developer</p>
             <p className="text-muted-foreground mt-2 max-w-xl text-lg">
               Hi, I&apos;m a developer drifting through this vague idea of life.
@@ -19,6 +22,13 @@ export default function Hero1() {
               modern frameworks and tools.
             </p>
           </div>
+
+          <Link
+            href="/resume"
+            className="pointer-events-auto mt-4 font-semibold hover:underline"
+          >
+            My Resume
+          </Link>
 
           {/* Contact Links */}
           <div className="pointer-events-auto mt-4 flex flex-row gap-6">
@@ -143,6 +153,6 @@ export default function Hero1() {
           )}
         />
       </div>
-    </div>
+    </PageFadeTransition>
   );
 }

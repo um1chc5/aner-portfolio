@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`$ ${nunitoSans.className} antialiased min-h-screen`}>{children}</body>
+      <body className={`$ ${nunitoSans.className} antialiased min-h-screen no-scrollbar`}>{children}</body>
     </html>
   );
 }
