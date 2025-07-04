@@ -4,6 +4,7 @@ import Link from "next/link";
 import PageFadeTransition from "../page-transition/page-fade-transition";
 import ButtonWithHoverSound from "../audio/button-with-hover-sound";
 import GridBackground from "../grid-background";
+import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
 
 export default function Hero1() {
   return (
@@ -24,12 +25,14 @@ export default function Hero1() {
           </div>
 
           <ButtonWithHoverSound>
-            <Link
-              href="/resume"
-              className="pointer-events-auto mt-4 font-semibold hover:underline"
-            >
-              My Resume
-            </Link>
+            <InteractiveHoverButton className="mt-4 shadow-md">
+              <Link
+                href="/resume"
+                className="pointer-events-auto mt-4 font-semibold hover:underline"
+              >
+                My Resume
+              </Link>
+            </InteractiveHoverButton>
           </ButtonWithHoverSound>
 
           {/* Contact Links */}

@@ -1,5 +1,6 @@
 import ButtonWithHoverSound from "@/components/audio/button-with-hover-sound";
 import GridBackground from "@/components/grid-background";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import PageFadeTransition from "@/components/page-transition/page-fade-transition";
 import Link from "next/link";
 
@@ -7,17 +8,17 @@ export default function Resume() {
   return (
     <PageFadeTransition>
       <GridBackground className="fixed" />
-      <ButtonWithHoverSound>
-        <Link
-          href="/"
-          className="hover:bg-primary-foreground pointer-events-auto top-4 left-4 z-10 rounded-md border bg-white px-3 py-1.5 text-sm shadow sm:left-4 sm:px-4 sm:py-2 sm:text-base md:fixed md:top-8 md:left-8"
-        >
-          ← Back to Home
-        </Link>
+      <ButtonWithHoverSound className="fixed top-4 right-4 z-10 md:top-10 md:right-10">
+        <InteractiveHoverButton>
+          <Link href="/">
+            <p className="max-sm:hidden">Back to Home</p>
+            <p className="sm:hidden">Back</p>
+          </Link>
+        </InteractiveHoverButton>
       </ButtonWithHoverSound>
-      <main className="relative flex min-h-screen items-start justify-center px-4 py-8 sm:px-4 sm:py-12 md:px-8 md:py-16">
+      <main className="pointer-events-none relative flex min-h-screen items-start justify-center px-4 py-16 sm:px-4 sm:py-12 md:px-8 md:py-16">
         {/* Back to Home Button */}
-        <section className="w-full max-w-md rounded-xl border border-gray-200 bg-white/80 p-4 text-justify shadow-xl backdrop-blur-md sm:max-w-lg sm:p-6 md:max-w-2xl md:p-8">
+        <section className="w-full max-w-md rounded-xl border border-gray-200 bg-white/60 p-4 shadow-xl backdrop-blur-md sm:max-w-lg sm:p-6 md:max-w-2xl md:p-8">
           {/* Header */}
           <header className="mb-6 text-center">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
@@ -53,7 +54,7 @@ export default function Resume() {
           {/* Overview */}
           <section className="mb-6">
             <h2 className="mb-1 text-base font-bold text-gray-700">OVERVIEW</h2>
-            <p className="text-sm text-gray-700">
+            <p className="text-justify text-sm text-gray-700">
               Front-end developer with 1.5 years of experience building
               performant, user-friendly web applications. Recognized for
               delivering high-quality products on time, collaborating
@@ -77,11 +78,12 @@ export default function Resume() {
               <ul className="mt-1 list-inside list-disc space-y-1 text-sm text-gray-700">
                 <li>
                   Developed Client Portal and Admin applications for CFD trading
-                  platforms (Prop and FX), serving 5000+ users.
+                  platforms (Prop and FX).
                 </li>
                 <li>
                   Built a chart system similar to TradingView for real-time
-                  trading data visualization and interaction.
+                  trading data visualization and interaction, serving 4000+
+                  users.
                 </li>
                 <li>
                   Utilized React, Nuxt, TypeScript, and various JavaScript
@@ -224,7 +226,7 @@ export default function Resume() {
               </h2>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li>
-                  TOEIC (Reading and Listening) - Overall score:{" "}
+                  TOEIC (Reading and Listening):{" "}
                   <span className="font-medium">875</span>
                 </li>
               </ul>

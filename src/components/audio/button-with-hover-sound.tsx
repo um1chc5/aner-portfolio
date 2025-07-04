@@ -6,7 +6,7 @@ import { useAudio } from "./audio-provider";
 // Path to the audio file
 
 interface ButtonWithHoverSoundProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
 }
@@ -27,15 +27,10 @@ function ButtonWithHoverSound({
   };
 
   return (
-    <button
-      type="button"
-      className={className}
-      onMouseOver={handleMouseOver}
-      {...rest}
-    >
+    <div className={className} onMouseOver={handleMouseOver} {...rest}>
       {children}
       <audio ref={audioRef} src="/audio/hover-selection.wav" />
-    </button>
+    </div>
   );
 }
 
