@@ -25,13 +25,11 @@ export default function Hero1() {
           </div>
 
           <ButtonWithHoverSound>
-            <InteractiveHoverButton className="mt-4 shadow-md">
-              <Link
-                href="/resume"
-                className="pointer-events-auto mt-4 font-semibold hover:underline"
-              >
-                My Resume
-              </Link>
+            <InteractiveHoverButton
+              link="/resume"
+              className="pointer-events-auto mt-4 shadow-md"
+            >
+              My Resume
             </InteractiveHoverButton>
           </ButtonWithHoverSound>
 

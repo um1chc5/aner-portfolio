@@ -1,19 +1,22 @@
+"use client";
+
 import ButtonWithHoverSound from "@/components/audio/button-with-hover-sound";
 import GridBackground from "@/components/grid-background";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import PageFadeTransition from "@/components/page-transition/page-fade-transition";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Resume() {
+  const router = useRouter();
+
   return (
     <PageFadeTransition>
       <GridBackground className="fixed" />
       <ButtonWithHoverSound className="fixed top-4 right-4 z-10 md:top-10 md:right-10">
-        <InteractiveHoverButton>
-          <Link href="/">
-            <p className="max-sm:hidden">Back to Home</p>
-            <p className="sm:hidden">Back</p>
-          </Link>
+        <InteractiveHoverButton onClick={() => router.push("/")}>
+          <p className="max-sm:hidden">Back to Home</p>
+          <p className="sm:hidden">Back</p>
         </InteractiveHoverButton>
       </ButtonWithHoverSound>
       <main className="pointer-events-none relative flex min-h-screen items-start justify-center px-4 py-16 sm:px-4 sm:py-12 md:px-8 md:py-16">

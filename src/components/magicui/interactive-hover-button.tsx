@@ -1,16 +1,22 @@
+"use client";
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 type InteractiveHoverButtonProps =
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
-  InteractiveHoverButtonProps
->(({ children, className, ...props }, ref) => {
+  InteractiveHoverButtonProps & { link?: string }
+>(({ children, className, link, ...props }, ref) => {
+  const router = useRouter();
+
   return (
     <button
+      onClick={() => link && router.push(link)}
       ref={ref}
       className={cn(
         "group bg-background relative w-auto cursor-pointer overflow-hidden rounded-full border p-2 px-6 text-center font-semibold",
