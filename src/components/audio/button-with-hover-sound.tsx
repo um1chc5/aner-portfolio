@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { useAudio } from "./audio-provider";
 
 // Path to the audio file
@@ -16,20 +16,21 @@ function ButtonWithHoverSound({
   className = "",
   ...rest
 }: ButtonWithHoverSoundProps) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const { soundOn } = useAudio();
 
   const handleMouseOver = () => {
-    if (audioRef.current && soundOn) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+    if (soundOn) {
+      const audio = document.querySelector<HTMLAudioElement>("#hover-audio");
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
     }
   };
 
   return (
     <div className={className} onMouseOver={handleMouseOver} {...rest}>
       {children}
-      <audio ref={audioRef} src="/audio/hover-selection.wav" />
     </div>
   );
 }
