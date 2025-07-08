@@ -4,16 +4,16 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.jsdelivr.net',
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
       },
       {
-        protocol: 'https',
-        hostname: 'github-readme-stats.vercel.app',
+        protocol: "https",
+        hostname: "github-readme-stats.vercel.app",
       },
       {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
       },
     ],
   },

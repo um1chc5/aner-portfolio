@@ -1,7 +1,7 @@
 "use client";
 
+import { useAudioStore } from "@/stores/audio.stores";
 import { Volume2, VolumeX } from "lucide-react";
-import { useAudio } from "@/components/audio/audio-provider";
 import { useEffect } from "react";
 
 const FADE_DURATION = 500; // ms
@@ -30,10 +30,11 @@ function fadeAudio(
 }
 
 export default function SoundToggleButton() {
-  const { soundOn, setSoundOn } = useAudio();
+  const { soundOn, setSoundOn } = useAudioStore();
 
   useEffect(() => {
-    const bgAudio = document.querySelector<HTMLAudioElement>("#background-music");
+    const bgAudio =
+      document.querySelector<HTMLAudioElement>("#background-music");
     if (!bgAudio) return;
 
     if (soundOn) {
@@ -41,15 +42,9 @@ export default function SoundToggleButton() {
       bgAudio.play();
       fadeAudio(bgAudio, 0, TARGET_VOLUME, FADE_DURATION);
     } else {
-      fadeAudio(
-        bgAudio,
-        bgAudio.volume,
-        0,
-        FADE_DURATION,
-        () => {
-          bgAudio.pause();
-        },
-      );
+      fadeAudio(bgAudio, bgAudio.volume, 0, FADE_DURATION, () => {
+        bgAudio.pause();
+      });
     }
   }, [soundOn]);
 
@@ -58,7 +53,7 @@ export default function SoundToggleButton() {
       <button
         type="button"
         aria-label={soundOn ? "Mute sound" : "Unmute sound"}
-        onClick={() => setSoundOn((prev) => !prev)}
+        onClick={() => setSoundOn(!soundOn)}
         className="hover:bg-primary-foreground fixed right-4 bottom-4 z-50 rounded-full border bg-white/80 p-2 shadow-lg transition-colors sm:right-6 sm:bottom-6 sm:p-3"
       >
         {soundOn ? (

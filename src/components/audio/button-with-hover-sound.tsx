@@ -1,7 +1,7 @@
 "use client";
 
+import { useAudioStore } from "@/stores/audio.stores";
 import React from "react";
-import { useAudio } from "./audio-provider";
 
 // Path to the audio file
 
@@ -16,7 +16,7 @@ function ButtonWithHoverSound({
   className = "",
   ...rest
 }: ButtonWithHoverSoundProps) {
-  const { soundOn } = useAudio();
+  const { soundOn } = useAudioStore();
 
   const handleMouseOver = () => {
     if (soundOn) {

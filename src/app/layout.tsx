@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   description: "An Vu Vuong | Frontend Developer",
   openGraph: {
     title: "An Vu Vuong | Frontend Developer",
-    description: "Portfolio of An Vu Vuong, a passionate Frontend Developer. Explore projects, skills, and contact information.",
+    description:
+      "Portfolio of An Vu Vuong, a passionate Frontend Developer. Explore projects, skills, and contact information.",
     url: "https://um1chc5.com/",
     siteName: "An Vu Vuong Portfolio",
     images: [
